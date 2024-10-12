@@ -11,7 +11,7 @@ module.exports = {
         APP_NAME: process.env.HEROKU_APP_NAME
     },
     PORT: process.env.PORT || 3000,
-    BASE_URL : "https://rudhra-web.koyeb.app",
+    BASE_URL : "https://rudhra-web.koyeb.app/",
     REPO: "princerudh/rudhra-bot",
     BGM_URL : process.env.BGM_URL || "null",
     ANTI_CALL : process.env.ANTI_CALL || 'false',//true,block
