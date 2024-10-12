@@ -1,13 +1,5 @@
-FROM node:latest
-COPY package*.json ./
-RUN npm install
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-COPY . .
-WORKDIR /test
+FROM quay.io/princerudh/rudhra:latest
+RUN git clone https://github.com/rudhran-prh/rudhr /root/rudhra/
+WORKDIR /root/rudhra/
+RUN yarn install --network-concurrency 1
 CMD ["node", "index.js"]
